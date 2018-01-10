@@ -26,11 +26,14 @@
 - (void)deleteDatabase;
 - (void)deleteAllEntities;
 
+- (void) setDefaultConnection:(NSString *) connectionName;
+
 //=======================================================
 #pragma mark - Transactions
 //=======================================================
 - (void)beginTransaction;
 - (void)commit;
 - (void)rollback;
-- (void)transaction:(void(^)())callback;
+- (void)transaction:(void(^)(void))callback;
+
 @end
